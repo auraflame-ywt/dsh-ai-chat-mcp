@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "AI Chat MCP",
+    "description": "Open an MCP endpoint for external tools: create DeepSeek Harness sessions, run conversation turns and get assistant answers, read transcripts, search sessions, cancel running work and pick models — over Streamable HTTP, legacy HTTP+SSE or a stdio bridge."
+  }
+}

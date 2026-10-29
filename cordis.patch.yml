@@ -1,0 +1,27 @@
+# AI Chat MCP: an MCP server hosted by the Harness itself so external tools can
+# create sessions, run conversation turns, read history and search sessions.
+# The row config below is read by lib/index.js `apply(ctx, config)`; every field
+# is optional.
+- insert:
+    - id: ai-chat-mcp
+      name: '@liuxinye/dsh-ai-chat-mcp'
+      config:
+        # Interface the MCP endpoint binds to. Keep 127.0.0.1 unless the token
+        # below is set; a non-loopback bind without a token is refused.
+        host: 127.0.0.1
+        # TCP port. Streamable HTTP lives at /mcp, the legacy transport at /sse.
+        port: 8391
+        # Optional Bearer Token; leave empty for no check. Use 'auto' to
+        # generate one per start (logged at startup; required for LAN binds).
+        authToken: ''
+        # Default wait budget for one conversation turn (ms).
+        defaultTimeoutMs: 600000
+        # Largest accepted request body (bytes).
+        maxBodyBytes: 1048576
+        # Also serve the legacy HTTP+SSE transport (GET /sse + POST /message).
+        enableLegacySse: true
+        # Keep-alive comment interval for open SSE responses (ms).
+        keepAliveMs: 15000
+        # A response settling within this window is returned as one JSON body
+        # instead of an SSE stream (ms). Longer work streams with keep-alives.
+        jsonGraceMs: 3000

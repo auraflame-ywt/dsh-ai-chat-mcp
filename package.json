@@ -1,0 +1,63 @@
+{
+  "name": "@liuxinye/dsh-ai-chat-mcp",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "AI Chat MCP server for DeepSeek Harness: exposes session creation, conversation turns, history, search and model selection to external MCP clients over Streamable HTTP, legacy HTTP+SSE, or a stdio bridge.",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/chat.js",
+    "lib/mcp-protocol.js",
+    "lib/http-server.js",
+    "lib/tools.js",
+    "lib/stdio-bridge.mjs",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "icon": "./icon.svg",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT",
+  "author": "liuxinye",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auraflame-ywt/dsh-ai-chat-mcp.git"
+  },
+  "homepage": "https://github.com/auraflame-ywt/dsh-ai-chat-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/auraflame-ywt/dsh-ai-chat-mcp/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.1-rc.3 <1.0.0"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "mcp",
+    "model-context-protocol",
+    "ai-agent",
+    "server",
+    "streamable-http"
+  ],
+  "scripts": {
+    "test": "node test/protocol.test.mjs && node test/transport.test.mjs"
+  }
+}

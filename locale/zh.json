@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "AI 对话 MCP",
+    "description": "面向外部工具开放 MCP 服务端：创建 DeepSeek Harness 会话、执行对话并取得回答、读取会话记录、搜索会话、取消运行中的工作、选择模型。支持 Streamable HTTP、旧版 HTTP+SSE 与 stdio 桥接三种接入方式。"
+  }
+}
